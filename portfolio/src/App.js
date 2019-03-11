@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Projects from './Projects';
+
 import './App.css';
 
 class App extends Component {
-  constructor(){
-    super();
-    this.state = { displayBio : false };
 
-    this.toogleDisplayBio = this.toogleDisplayBio.bind(this);
-  }
+  state = { displayBio : false };
 
-  toogleDisplayBio(){
+  toogleDisplayBio = () => {
     this.setState({ displayBio: !this.state.displayBio });
   }
 
@@ -29,11 +26,13 @@ class App extends Component {
             <p>Besides coding, I also love music and speed skating!</p>
             <button onClick={this.toogleDisplayBio}>Show less</button>
           </div>) : (
-            <dv>
+            <div>
               <button onClick={this.toogleDisplayBio}>Read more</button> 
-            </dv>
+            </div>
           )
         }
+        <hr/>
+        <Projects/>
       </div>
     );
   }
